@@ -29,9 +29,16 @@ nav{
     height: 50px;
     padding: 12px 20px;
     box-shadow: 0px 0px 5px 0px var(--very-light-pink);
+
+    & img{
+        height: 100%;
+        cursor: pointer;
+    }
 }
 
-.menu{
+/* -------------- Mobile Menu -------------- */
+
+.mobile-menu{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -83,6 +90,117 @@ nav{
     }
 }
 
+.login-list{
+    display: none;
+}
+
+/* -------------- Shopping Cart -------------- */
+
+.shopping-cart-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    gap: 40px;
+    position: fixed;
+    top: 60px;
+    right: -320px;
+    opacity: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 5px 0px var(--very-light-pink);
+    transition: all 1s ease;
+    
+    & ul{
+
+        & li{
+            margin: 5px 0px;
+
+            & span{
+                display: inline-block;
+                width: 100%;
+                font-size: var(--sm);
+                font-weight: bold;
+                padding: 5px 15px;
+                color: var(--very-light-pink);
+                border-bottom: 1px solid var(--very-light-pink);
+            }
+
+            & a{
+                color:var(--black);
+                display: inline-block;
+                padding: 5px 15px;
+                border: 1px solid var(--white);
+                border-radius: 20px;
+
+                &:hover{
+                    color: var(--hospital-green);
+                    border: 1px solid var(--hospital-green);
+                    border-radius: 20px;
+                }
+
+                &:focus{
+                    color: var(--white);
+                    background-color: var(--hospital-green);
+                }
+            }
+
+        }
+    }
+}
+
 .active-left{
     left: 10px;
+}
+
+.active-right{
+    right: 10px;
+}
+
+/* ---------------- Cards ------------- */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    place-content: center;
+    gap: 10px;
+    margin: 10px 0px;
+
+    & .product-card{
+        width: 220px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: var(--text-input-field);
+
+        & .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        & .product-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            & figure img {
+                width: 40px;
+                height: 40px;
+            }
+
+            & div p:nth-child(1){
+                font-weight: bold;
+                font-size: var(--md);
+                margin-bottom: 4px;
+            }
+
+            & div p:nth-child(2) {
+                font-size: var(--sm);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+        }
+    }
 }
