@@ -100,52 +100,107 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 300px;
+    width: 400px;
     gap: 40px;
     position: fixed;
     top: 60px;
-    right: -320px;
+    right: -420px;
     opacity: 100%;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--white);
     box-shadow: 0px 0px 5px 0px var(--very-light-pink);
     transition: all 1s ease;
+
+    & .shopping-cart-title{
+        display: inline-block;
+        width: 100%;
+        font-size: var(--sm);
+        font-weight: bold;
+        padding: 5px 15px;
+        color: var(--very-light-pink);
+        border-bottom: 1px solid var(--very-light-pink);
+    }
     
-    & ul{
+    & .cart-list{
 
         & li{
-            margin: 5px 0px;
+            position: relative;
+            display: grid;
+            grid-template-columns: 80px auto;
+            align-items: center;
+            margin: 5px;
+            background-color: var(--text-input-field);
+            border-radius: 10px;
+            overflow: hidden;
 
-            & span{
-                display: inline-block;
-                width: 100%;
-                font-size: var(--sm);
-                font-weight: bold;
-                padding: 5px 15px;
-                color: var(--very-light-pink);
-                border-bottom: 1px solid var(--very-light-pink);
+            & img{
+                width: 80px;
+                height:80px;
+                padding: 5px;
+                border-radius: 10px;
+                object-fit: cover;
             }
+            
+            & b{
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                width: 20px;
+                height: 20px;
+                font-size: var(--lg);
+                color: var(--hospital-green);
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            & .product-info{
 
-            & a{
-                color:var(--black);
-                display: inline-block;
-                padding: 5px 15px;
-                border: 1px solid var(--white);
-                border-radius: 20px;
+                & p:nth-child(1){
+                    display: inline-block;
+                    width: 100px;
+                    font-weight: bold;
+                    margin: 5px 10px;
 
-                &:hover{
-                    color: var(--hospital-green);
-                    border: 1px solid var(--hospital-green);
-                    border-radius: 20px;
                 }
 
-                &:focus{
-                    color: var(--white);
-                    background-color: var(--hospital-green);
+                & label{
+                    font-size: var(--sm);
+                    color: var(--very-light-pink);
+                }
+
+                & p:nth-child(3){
+                    font-size: var(--sm);
+                    height: 35px;
+                    margin: 5px 10px;
+                }
+    
+                & input{
+                    width: 40px;
+                    height: 20px;
+                    text-align: center;
                 }
             }
 
+        }
+    }
+
+    & button{
+        background-color: var(--hospital-green);
+        border-radius: 5px;
+        border: none;
+        color: var(--white);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: bold;
+        height: 50px;
+        transition: all 400ms ease;
+
+        &:focus{
+            background-color: var(--white);
+            color: var(--hospital-green);
+            border: 1px solid var(--hospital-green);
         }
     }
 }
