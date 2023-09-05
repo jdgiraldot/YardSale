@@ -23,11 +23,14 @@ body{
 }
 
 nav{
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 50px;
     padding: 12px 20px;
+    background-color: var(--white);
     box-shadow: 0px 0px 5px 0px var(--very-light-pink);
 
     & img{
@@ -158,7 +161,7 @@ nav{
 
                 & p:nth-child(1){
                     display: inline-block;
-                    width: 100px;
+                    width: 120px;
                     font-weight: bold;
                     margin: 5px 10px;
 
@@ -218,14 +221,15 @@ nav{
     display: grid;
     grid-template-columns: repeat(auto-fill, 220px);
     place-content: center;
-    gap: 10px;
-    margin: 10px 0px;
+    gap: 20px;
+    margin: 70px 0px;
 
     & .product-card{
         width: 220px;
         padding: 10px;
         border-radius: 20px;
         background-color: var(--text-input-field);
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
 
         & .product-img {
             width: 100%;
@@ -242,6 +246,7 @@ nav{
             & figure img {
                 width: 40px;
                 height: 40px;
+                cursor: pointer;
             }
 
             & div p:nth-child(1){
